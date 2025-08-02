@@ -60,7 +60,7 @@ function playSingleRound(playerSelection, computerSelection) {
   if (player === computer) {
     return {
       result: "tie",
-      message: `🤝 It's a tie! You both chose ${capitalize(player)}.`
+      message: ` It's a tie! You both chose ${capitalize(player)}.`
     };
   }
 
@@ -97,7 +97,7 @@ function getComputerChoice() {
 
 
 function game() {
-  alert("👾 Welcome, human. You are Earth’s last hope against the Evil AI.\n\nDefeat it in a 5-round Rock, Paper, Scissors battle!\n\nInstructions:\n✔️ Type 'Rock', 'Paper', or 'Scissors'\n✔️ Invalid inputs don’t count\n✔️ First to win the most rounds saves the world!");
+  alert(" Welcome, human. You are Earth’s last hope against the Evil AI.\n\nDefeat it in a 5-round Rock, Paper, Scissors battle!\n\nInstructions:\n✔️ Type 'Rock', 'Paper', or 'Scissors'\n✔️ Invalid inputs don’t count\n✔️ First to win the most rounds saves the world!");
 
   let playerScore = 0;
   let computerScore = 0;
@@ -105,25 +105,25 @@ function game() {
 
   while (validRounds < 5) {
     const roundNumber = validRounds + 1;
-    let input = prompt(`🔁 Round ${roundNumber} - Choose Rock, Paper, or Scissors:`);
+    let input = prompt(` Round ${roundNumber} - Choose Rock, Paper, or Scissors:`);
 
     if (!input) {
-      alert("⚠️ Please enter a choice. Try again.");
+      alert(" Please enter a choice. Try again.");
       continue;
     }
 
     const playerSelection = input.trim().toLowerCase();
 
     if (!["rock", "paper", "scissors"].includes(playerSelection)) {
-      alert("❌ Invalid input! Only 'Rock', 'Paper', or 'Scissors' are allowed.");
+      alert(" Invalid input! Only 'Rock', 'Paper', or 'Scissors' are allowed.");
       continue; 
     }
 
     const computerSelection = getComputerChoice();
     const { result, message } = playSingleRound(playerSelection, computerSelection);
 
-    console.log(`🧑 You chose: ${capitalize(playerSelection)}`);
-    console.log(`🤖 AI chose: ${capitalize(computerSelection)}`);
+    console.log(` You chose: ${capitalize(playerSelection)}`);
+    console.log(` AI chose: ${capitalize(computerSelection)}`);
     console.log(message);
     console.log("--------------------------------------------------");
 
@@ -134,18 +134,18 @@ function game() {
   }
 
  
-  console.log("🎮 Game Over!");
-  console.log(`📊 Final Score → You: ${playerScore} | AI: ${computerScore}`);
+  console.log(" Game Over!");
+  console.log(` Final Score → You: ${playerScore} | AI: ${computerScore}`);
 
   if (playerScore > computerScore) {
-    console.log("🏆 Victory! You saved the world from the evil AI! 🎉");
+    console.log(" Victory! You saved the world from the evil AI! 🎉");
   } else if (playerScore < computerScore) {
-    console.log("💀 The evil AI has won. Earth falls under robotic rule… 🤖");
+    console.log(" The evil AI has won. Earth falls under robotic rule… 🤖");
   } else {
-    console.log("🤝 It's a draw! The battle continues another day...");
+    console.log(" It's a draw! The battle continues another day...");
   }
 
-  alert("🕹️ Game Over!\nCheck the console (press F12) to see the full results.\nThanks for playing!");
+  alert(" Game Over!\nCheck the console (press F12) to see the full results.\nThanks for playing!");
 }
 
 game();
