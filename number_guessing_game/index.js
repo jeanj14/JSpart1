@@ -39,6 +39,9 @@ function checkGuess(targetNum, userInput){
 
 
 function game (){
+    alert("👾 Welcome, human. You are Earth’s last hope against the Evil AI.\n\nDefeat it in a battle of wits by guessing the right number!\n\nInstructions:\n✔️ Guess a number between 1 and 100 \n✔️ You have a max of 10 attempts, once it's used up, the Evil AI wins! \n✔️ Invalid inputs don’t count\n✔️ First to guess the correct number saves the world!");
+
+
     while(curAttempts<maxAttempts){
         let result = checkGuess(generateRandomNumber(), getPlayerGuess())
         if (result != "correct") {
@@ -47,14 +50,16 @@ function game (){
             console.log("Wrong answer, try again")
         } else if (result === "correct"){
             console.log(`you have made ${curAttempts} attempts`)
-            console.log("Player has won");
+            console.log("Player has won! 🏆 Victory! You saved the world from the evil AI! 🎉");
             break
         } 
         
         if ((result != "correct") && (curAttempts === maxAttempts)){
-            console.log("Player has lost.")
+            console.log("Player has lost. 💀 The evil AI has won. Earth falls under robotic rule… 🤖")
         }
     }
+
+      alert("🕹️ Game Over!\nCheck the console (press F12) to see the full results.\nThanks for playing!");
 }
 
 
